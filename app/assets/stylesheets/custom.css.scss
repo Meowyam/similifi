@@ -1,0 +1,53 @@
+@import "bootstrap";
+
+$purple: #673198;
+
+body {
+    padding-top: 60px;
+}
+
+section {
+    overflow: auto;
+}
+
+.center {
+    text-align: center;
+    h1 {
+     margin-bottom: 10px;
+    }
+}
+
+#logo {
+    font-variant: small-caps;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: $purple;
+    &:hover {
+        color: #c89400;
+        text-decoration: none;
+    }
+}
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #546372;
+    color: $purple;
+    a {
+        color: #555;
+        &:hover {
+            color: #222;
+        }
+    }
+    small {
+        float: left;
+    }
+    ul {
+        float: right;
+        list-style: none;
+        li {
+            float: left;
+            margin-left: 10px;
+        }
+    }
+}
