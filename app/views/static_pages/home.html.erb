@@ -1,4 +1,4 @@
-<% provide(:title, 'Home') %>
+<% provide(:title, current_user.name) %>
 <% if signed_in? %>
     <%= render 'shared/signed_in' %>
 <%else %>
