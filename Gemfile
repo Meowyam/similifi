@@ -38,5 +38,6 @@ group :test do
   gem 'libnotify', '0.5.9'
 end
 
-group :production do
+group :production, :staging do
+  gem 'pg'
 end
