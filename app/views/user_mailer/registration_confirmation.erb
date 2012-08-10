@@ -1,3 +1,4 @@
 <p>Hey <%= @user.name %>, thank you for registering.</p>
+<p><%= link_to "Edit your profile", edit_user_url(@user) %>.
 <p>See you at <%= link_to "Crocusfields", user_url(@user) %>.
 
