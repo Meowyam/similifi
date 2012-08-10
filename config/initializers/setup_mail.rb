@@ -7,4 +7,4 @@ ActionMailer::Base.smtp_settings = {
     :enable_starttls_auto => true
 }
 
-ActionMailer::Base.default_url_options[:host] = "http://crocusfields.herokuapp.com"
+ActionMailer::Base.default_url_options[:host] = "https://crocusfields.herokuapp.com"
