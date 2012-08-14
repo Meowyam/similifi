@@ -44,6 +44,8 @@ a {
     box-shadow: 0 0px 0px;
     -webkit-box-shadow: 0 0px 0px;
     -moz-box-shadow: 0 0px 0px;
+    font-family: 'Enriqueta', serif;
+    font-size: 10pt;
 }
 
 section {
@@ -69,6 +71,7 @@ section {
     border-color: rgb(200, 200, 237) rgb(200, 200, 237) rgb(173, 173, 204);
     color: rgb(255, 240, 216);
     font-family: 'Enriqueta', serif;
+    font-size: 12pt;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disable, .btn-primary[disabled] {
@@ -110,6 +113,8 @@ footer {
     padding-top: 5px;
     border-top: none;
     color: rgb(231, 177, 175);
+    font-family: Enriqueta, serif;
+    font-size: 10pt;
    a {
         color: rgb(141, 112, 112);
         &:hover {
