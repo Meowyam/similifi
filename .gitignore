@@ -14,3 +14,7 @@
 /log/*.log
 /tmp
 bundler_stubs/
+
+# Ignore private settings
+/config/initializers/setup_mail.rb
+/config/initializers/secret_token.rb

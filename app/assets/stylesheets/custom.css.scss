@@ -1,7 +1,5 @@
 @import "bootstrap";
 
-$purple: #673198;
-
 @mixin box_sizing {
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;
@@ -9,7 +7,42 @@ $purple: #673198;
 }
 
 body {
-    padding-top: 60px;
+    padding-top: 80px;
+    background-color: rgb(255, 240, 216);
+    color: rgb(106, 106, 89); 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(141, 112, 112);
+}    
+
+.navbar .nav > li > a {
+    color: rgb(141, 112, 112);
+    text-shadow: 0 0 0;
+    &:hover {
+            color: rgb(203, 171, 171);
+    }
+}
+
+aside section span {
+    color: rgb(203, 171, 171);
+}
+
+a {
+    color: rgb(141, 112, 112);
+    &:hover {
+        color:rgb(203, 171, 171);
+    }
+}
+
+.navbar-inner {
+    background-color: rgb(255, 240, 216);
+    background-image: linear-gradient(bottom, rgb(255, 240, 216), rgb(255, 213, 192));
+    background-image: -webkit-linear-gradient(bottom, rgb(255, 240, 216), rgb(255, 213, 192));
+    background-image: -moz-linear-gradient(bottom, rgb(255, 240, 216), rgb(255, 213, 192));
+    box-shadow: 0 0px 0px;
+    -webkit-box-shadow: 0 0px 0px;
+    -moz-box-shadow: 0 0px 0px;
 }
 
 section {
@@ -23,20 +56,38 @@ section {
     }
 }
 
+.hero-unit {
+    background-color: rgb(255, 240, 216);
+}
+
+.btn-primary {
+    background-color: rgb(200, 200, 237);
+    background-image: -webkit-linear-gradient(top, rgb(200, 200, 237), rgb(189, 189, 224));
+    background-image: -moz-linear-gradient(top, rgb(200, 200, 237), rgb(189, 189, 224));
+    background-image: linear-gradient(top, rgb(200, 200, 237), rgb(189, 189, 224));
+    border-color: rgb(200, 200, 237) rgb(200, 200, 237) rgb(173, 173, 204);
+    color: rgb(255, 240, 216);
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disable, .btn-primary[disabled] {
+    background-color: rgb(200, 200, 237);
+    color: rgb(255, 240, 216);
+}
+
 .stats {
     overflow: auto;
     a {
         float: left;
         padding: 0 10px;
-        border-left: 1px solid $grayLighter;
-        color: gray;
+        border-left: 1px dotted rgb(255, 213, 192);
+        color: rgb(203, 171, 171);
         &:first-child {
           padding-left: 0;
           border: 0;
         }
         &:hover {
           text-decoration: none;
-          color: $blue;
+          color: rgb(141, 112, 112);
         }
     }
     strong {
@@ -52,26 +103,15 @@ section {
     }
 }
 
-#logo {
-    font-variant: small-caps;
-    font-weight: bold;
-    letter-spacing: -1px;
-    color: $purple;
-    &:hover {
-        color: #c89400;
-        text-decoration: none;
-    }
-}
-
 footer {
     margin-top: 45px;
     padding-top: 5px;
-    border-top: 1px solid #546372;
-    color: $purple;
-    a {
-        color: #555;
+    border-top: none;
+    color: rgb(231, 177, 175);
+   a {
+        color: rgb(141, 112, 112);
         &:hover {
-            color: #222;
+            color: rgb(203, 171, 171);
         }
     }
     small {
@@ -90,7 +130,7 @@ footer {
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px dotted rgb(203, 171, 171);
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -112,12 +152,21 @@ aside {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-    border: 1px solid #bbb;
+    border: 1px dotted rgb(203, 171, 171);
     width: 100%;
     padding: 10px;
     height: auto;
     margin-bottom: 15px;
     @include box_sizing;
+}
+
+input, button, select, textarea {
+    color: rgb(141, 112, 112);
+    background-color: rgb(255, 246, 237);
+}
+
+label {
+    color: rgb(141, 112, 112);
 }
 
 #error_explanation {
@@ -133,6 +182,18 @@ input, textarea, select, .uneditable-input {
     @extend .error;
 }
 
+::-webkit-input-placeholder {
+    font-style: italic;
+    font-size: 18px;
+    color: rgb(203, 171, 171);
+}
+
+input:-moz-placeholder {
+    font-style: italic;
+    font-size: 18px;
+    color: rgb(203, 171, 171);
+}
+
 /* users index */
 
 .users {
@@ -141,9 +202,9 @@ input, textarea, select, .uneditable-input {
     li {
         overflow: auto;
         padding: 10px 0;
-        border-top: 1px solid $grayLighter;
+        border-top: 1px dotted rgb(203, 171, 171);
         &:last-child {
-          border-bottom: 1px solid $grayLighter;
+          border-bottom: 1px dotted rgb(203, 171, 171);
         }
     }
 }
@@ -156,7 +217,7 @@ input, textarea, select, .uneditable-input {
 
     li {
         padding: 10px 0;
-        border-top: 1px solid #e8e8e8;
+        border-top: 1px dotted rgb(203, 171, 171);
     }
 }
 
@@ -165,7 +226,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .timestamp {
-    color: $grayLight;
+    color: rgb(203, 171, 171);
 }
 
 aside {
