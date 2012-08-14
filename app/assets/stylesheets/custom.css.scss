@@ -14,6 +14,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     color: rgb(141, 112, 112);
+    font-family: 'Enriqueta', serif;
 }    
 
 .navbar .nav > li > a {
@@ -67,6 +68,7 @@ section {
     background-image: linear-gradient(top, rgb(200, 200, 237), rgb(189, 189, 224));
     border-color: rgb(200, 200, 237) rgb(200, 200, 237) rgb(173, 173, 204);
     color: rgb(255, 240, 216);
+    font-family: 'Enriqueta', serif;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disable, .btn-primary[disabled] {
@@ -167,6 +169,7 @@ input, button, select, textarea {
 
 label {
     color: rgb(141, 112, 112);
+    font-family: 'Enriqueta', serif;
 }
 
 #error_explanation {
@@ -185,12 +188,14 @@ label {
 ::-webkit-input-placeholder {
     font-style: italic;
     font-size: 18px;
+    font-family: 'Enriqueta', serif;
     color: rgb(203, 171, 171);
 }
 
 input:-moz-placeholder {
     font-style: italic;
     font-size: 18px;
+    font-family: 'Enriqueta', serif;
     color: rgb(203, 171, 171);
 }
 
