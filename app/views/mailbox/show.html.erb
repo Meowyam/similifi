@@ -1,0 +1,9 @@
+<h1>Inbox</h1>
+
+<% for message in @messages %>
+    <p>
+   <li id="<%= message.id %>">
+    <span class="user">
+        From: <%= message.user %>
+    </span>
+<% end %>

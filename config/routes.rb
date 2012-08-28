@@ -1,5 +1,5 @@
 Crocusfields::Application.routes.draw do
-  resources :users do
+ resources :users do
       member do
           get :following, :followers
       end
@@ -10,12 +10,15 @@ Crocusfields::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :messages, only: [:create, :show, :destroy]
+  resources :sent
 
   root to: 'static_pages#home'
 
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+  match '/inbox', to: 'sent#show'
 
   match '/help', to: 'static_pages#help'
 

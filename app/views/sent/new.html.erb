@@ -1,0 +1,11 @@
+<% provide(:title, 'Compose') %>
+<h1>Compose</h1>
+<%= form_for @message, :url => {:controller=>"sent", :action => "create"} do |f| %>
+    <div class="field">
+        <%= f.collection_select(:touser_id, User.all, :id, :name, :prompt => true) %>
+        <%= f.text_area :content, placeholder: "Write." %>
+    </div>
+
+        <%= f.submit "Send", class: "btn btn-large btn-primary" %>
+
+<% end %>

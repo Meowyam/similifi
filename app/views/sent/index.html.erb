@@ -1,0 +1,17 @@
+<% provide(:title, 'Sent') %>
+<h1>Sent</h1>
+
+<% for message in @messages %>
+    <li id="<%= message.id %>">
+        <span class="user">
+            To: <%= link_to message.touser.try(:name), message.touser %>
+        </span>
+        <span class="content">
+            <%= wrap(message.content) %>
+        </span>
+        <span class="timestamp">
+            Sent <%= time_ago_in_words(message.created_at) %>ago.
+        </span>
+    </li>
+<% end %>
+

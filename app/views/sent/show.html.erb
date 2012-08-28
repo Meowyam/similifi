@@ -1,0 +1,16 @@
+<% provide(:title, 'Inbox') %>
+<h1>Inbox</h1>
+<% for message in @messages %>
+    <li id="<%= message.id %>">
+        <span class="user">
+            From: <%= link_to message.user.name, message.user %>
+        </span>
+        <span class="content">
+            <%= wrap(message.content) %>
+        </span>
+        <span class="timestamp">
+            Sent <%= time_ago_in_words(message.created_at) %>ago.
+        </span>
+    </li>
+<% end %>
+    
