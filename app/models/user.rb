@@ -18,15 +18,15 @@ class User < ActiveRecord::Base
   has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   has_many :messages
-  has_many :to_messages, class_name: "Message"
 
   before_save { |user| user.email = email.downcase }
+  before_save { |user| user.name = name.downcase }
   before_save :create_remember_token
-  before_create :build_inbox
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 },
+                   uniqueness: { case_sensitive: false }
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
@@ -53,13 +53,6 @@ class User < ActiveRecord::Base
       relationships.find_by_followed_id(other_user.id).destroy
   end
 
-  def inbox
-      conversations.find_by_name("Inbox")
-  end
-
-  def build_inbox
-      conversations.build(:name => "Inbox")
-  end
   private
 
       def create_remember_token

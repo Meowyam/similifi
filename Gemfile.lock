@@ -101,6 +101,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.3.4)
+    nifty-generators (0.4.6)
     nokogiri (1.5.2)
     pg (0.12.2)
     polyglot (0.3.3)
@@ -119,6 +120,8 @@ GEM
       activesupport (= 3.2.3)
       bundler (~> 1.0)
       railties (= 3.2.3)
+    rails3-jquery-autocomplete (1.0.7)
+      rails (~> 3.0)
     railties (3.2.3)
       actionpack (= 3.2.3)
       activesupport (= 3.2.3)
@@ -197,8 +200,10 @@ DEPENDENCIES
   jquery-rails (= 2.0.0)
   libnotify (= 0.5.9)
   mail
+  nifty-generators
   pg
   rails (= 3.2.3)
+  rails3-jquery-autocomplete
   rb-inotify (= 0.8.8)
   rspec-rails (= 2.9.0)
   rubygems-bundler

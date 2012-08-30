@@ -3,4 +3,9 @@ class Message < ActiveRecord::Base
     belongs_to :user
     belongs_to :touser, class_name: "User"
     default_scope order: 'messages.created_at DESC'
+
+    def self.from_users_followed_by(user)
+        followed_user_ids = user.followed_user_ids
+        where("user_id IN (?) OR user_id = ?", followed_user_ids, user)
+    end
 end
