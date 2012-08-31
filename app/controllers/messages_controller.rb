@@ -1,12 +1,5 @@
 class MessagesController < ApplicationController
     before_filter :correct_user, only: [:create, :show, :destroy]
-    skip_before_filter :verify_authenticity_token, :only => [:auto_complete_for_message_to]
-
-    def auto_complete_for_message_to()
-        touser_id = params[:message][:to]
-        @tousers = User.find(:all, :conditions => "name like         '%"+user_name.downcase+"%'") 
-        render :partial => 'username'
-    end
     
     def index
         @messages = current_user.messages
