@@ -1,6 +1,9 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
+<div class="search">
+    <%= render 'search' %>
+</div>
 
+<h1><%= link_to "All users", :sort => "allusers" %></h1>
 <%= will_paginate %>
 
 <ul class="users">

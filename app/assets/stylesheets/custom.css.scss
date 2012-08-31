@@ -177,6 +177,24 @@ label {
     font-family: 'Enriqueta', serif;
 }
 
+.searchbox {
+    width: 300px;
+    opacity: 0.4;
+}
+
+.searchbox:focus {
+    opacity: 0.9;
+}
+
+.searchbox:active {
+    opacity: 0.9;
+}
+
+.search {
+    float: right;
+    width: 500px;
+}
+
 #error_explanation {
     color: #f00;
     ul {
@@ -258,5 +276,5 @@ aside {
     float: left;
     width: 100%;
     margin-top: 45px;
-    @includ box_sizing;
+    @include box_sizing;
 }

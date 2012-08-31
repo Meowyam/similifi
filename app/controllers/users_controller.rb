@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def index
-      @users = User.paginate(page: params[:page])
+      @users = User.search(params[:search], params[:page])
   end
 
   def destroy
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
       @users = @user.followers.paginate(page: params[:page])
       render 'show_follow'
   end
-
+  
   private
 
       def correct_user
