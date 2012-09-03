@@ -4,7 +4,7 @@
 <% for message in @messages %>
     <p id="<%= message.id %>">
         <span class="user">
-            To: <%= link_to message.touser.try(:name), message.touser %>
+            To: <%= link_to message.user_name, message.user %>
         </span>
         <span class="content">
             <%= wrap(message.content) %>

@@ -10,6 +10,9 @@
 #
 
 class User < ActiveRecord::Base
+    extend FriendlyId
+    friendly_id :name, use: :slugged
+
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
   has_many :microposts, dependent: :destroy
@@ -53,9 +56,9 @@ class User < ActiveRecord::Base
       relationships.find_by_followed_id(other_user.id).destroy
   end
 
-  def self.search(search, page)
+  def self.user_name(user_name, page)
       paginate :per_page => 5, :page => page,
-          :conditions => ['name like ?', "%#{search}%"],
+          :conditions => ['name like ?', "%#{user_name}%"],
           :order => 'name'
   end
 

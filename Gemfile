@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
+gem 'rails3-jquery-autocomplete'
 gem 'nifty-generators'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '2.0.0'
@@ -11,6 +12,7 @@ gem 'bootstrap-will_paginate', '0.0.5'
 gem 'rubygems-bundler'
 gem 'actionmailer'
 gem 'mail'
+gem 'friendly_id'
 
 group :development do
   gem 'annotate', '~> 2.4.1.beta'

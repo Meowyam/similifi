@@ -11,17 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120830204711) do
+ActiveRecord::Schema.define(:version => 20120903192542) do
 
   create_table "messages", :force => true do |t|
     t.string   "content"
     t.integer  "user_id"
-    t.integer  "touser_id"
+    t.string   "user_name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "messages", ["user_id", "touser_id", "created_at"], :name => "index_messages_on_user_id_and_touser_id_and_created_at"
+  add_index "messages", ["user_id", "created_at"], :name => "index_messages_on_user_id_and_created_at"
+  add_index "messages", ["user_id", "user_name"], :name => "index_messages_on_user_id_and_user_name"
+  add_index "messages", ["user_name", "created_at"], :name => "index_messages_on_user_name_and_created_at"
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -53,9 +55,11 @@ ActiveRecord::Schema.define(:version => 20120830204711) do
     t.boolean  "admin",                  :default => false
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+  add_index "users", ["slug"], :name => "index_users_on_slug"
 
 end

@@ -2,8 +2,8 @@
 <html>
     <head>
         <title><%= full_title(yield(:title)) %></title>
-        <%= stylesheet_link_tag "application", "token-input", media: "all" %>
-        <%= javascript_include_tag "jquery-1.8.0.min.js", "jquery.tokeninput", "application" %>
+        <%= stylesheet_link_tag "application", media: "all" %>
+        <%= javascript_include_tag "application" %>
         <%= csrf_meta_tags %>
         <%= render 'layouts/shim' %>
         <link href='http://fonts.googleapis.com/css?family=Enriqueta' rel="stylesheet" type="text/css">

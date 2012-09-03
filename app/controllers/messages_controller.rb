@@ -1,12 +1,13 @@
 class MessagesController < ApplicationController
+    autocomplete :user, :name
     before_filter :correct_user, only: [:create, :show, :destroy]
     
     def index
-        @messages = current_user.messages
+        @messages = current_user.messages.paginate(page: params[:page])
     end
 
     def show
-        @messages = Message.where("touser_id = ?", current_user.id)
+        @messages = Message.where("user_name = ?", current_user.name)
     end
 
     def new

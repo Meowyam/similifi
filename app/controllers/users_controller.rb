@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    autocomplete :user, :name
   before_filter :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_filter :correct_user, only: [:edit, :update]
   before_filter :admin_user, only: :destroy
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def index
-      @users = User.search(params[:search], params[:page])
+      @users = User.user_name(params[:user_name], params[:page])
   end
 
   def destroy

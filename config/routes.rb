@@ -3,6 +3,7 @@ Crocusfields::Application.routes.draw do
       member do
           get :following, :followers
       end
+      get :autocomplete_user_name, :on => :collection
   end
 
   resources :password_resets
@@ -10,7 +11,9 @@ Crocusfields::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  resources :messages
+  resources :messages do
+      get :autocomplete_user_name, :on => :collection
+  end
 
   root to: 'static_pages#home'
 
@@ -24,6 +27,8 @@ Crocusfields::Application.routes.draw do
   match '/about', to: 'static_pages#about'
 
   match '/contact', to: 'static_pages#contact'
+
+  get 'user/autocomplete_user_name'
 
 
   # The priority is based upon order of creation:

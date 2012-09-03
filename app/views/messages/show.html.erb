@@ -3,7 +3,7 @@
 <% for message in @messages %>
     <p id="<%= message.id %>">
         <span class="user">
-            From: <%= link_to message.user.name, message.user %>
+            From: <%= link_to message.user_name, message.user %>
         </span>
         <span class="content">
             <%= wrap(message.content) %>
