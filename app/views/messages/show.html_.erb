@@ -1,10 +1,9 @@
-<% provide(:title, 'Sent') %>
-<h1>Sent</h1>
-
+<% provide(:title, 'Inbox') %>
+<h1>Inbox</h1>
 <% for message in @messages %>
     <p id="<%= message.id %>">
         <span class="user">
-            To: <%= message.user_id %>
+            From: <%= link_to message.user_name, message.user_name %>
         </span>
         <span class="content">
             <%= wrap(message.content) %>
@@ -12,7 +11,7 @@
         <span class="timestamp">
             Sent <%= time_ago_in_words(message.created_at) %>ago.
         </span>
-        <%= render 'shared/delete_item', object: message %>
+        <%= render 'shared/delete_item', object: message %>   
     </p>
 <% end %>
-
+    
