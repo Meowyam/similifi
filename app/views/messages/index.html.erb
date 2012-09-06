@@ -4,7 +4,7 @@
 <% for message in @messages %>
     <p id="<%= message.id %>">
         <span class="user">
-            To: <%= message.user_id %>
+            To: <%= link_to message.user.name, message.user %>
         </span>
         <span class="content">
             <%= wrap(message.content) %>
@@ -12,7 +12,7 @@
         <span class="timestamp">
             Sent <%= time_ago_in_words(message.created_at) %>ago.
         </span>
-        <%= render 'shared/delete_item', object: message %>
     </p>
 <% end %>
+
 

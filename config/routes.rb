@@ -14,6 +14,7 @@ Crocusfields::Application.routes.draw do
   resources :messages do
       get :autocomplete_user_name, :on => :collection
   end
+  resources :privateposts
 
   root to: 'static_pages#home'
 
@@ -21,6 +22,7 @@ Crocusfields::Application.routes.draw do
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/inbox', to: 'messages#show'
+  match '/sent', to: 'messages#index'
 
   match '/help', to: 'static_pages#help'
 

@@ -1,9 +1,12 @@
 class MessagesController < ApplicationController
     autocomplete :user, :name
-    before_filter :correct_user, only: [:create, :show, :destroy]
+    before_filter :correct_user
     
     def index
         @messages = current_user.messages.paginate(page: params[:page])
+        @messages.each do |message|
+            message.user = User.find_by_name(message[:user_name])
+        end
     end
 
     def show
@@ -15,12 +18,11 @@ class MessagesController < ApplicationController
     end
 
     def create
-        logger.info(params[:message])
         @message = current_user.messages.build(params[:message])
 
         if @message.save
             flash[:success] = "Message sent!"
-            redirect_to root_path
+            redirect_to sent_path
         else
             render :action => "new"
         end
@@ -30,7 +32,6 @@ class MessagesController < ApplicationController
         @message.destroy
         redirect_to root_path
     end
-
     private
 
     def correct_user
