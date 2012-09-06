@@ -1,0 +1,32 @@
+.ui-menu-item{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255, 246, 237);
+    width: 400px;
+    font-size: 10pt;
+    line-height: 12pt;
+}
+.ui-corner-all {
+    padding: 0;
+    margin: 0;
+    width: 400px;
+}
+
+.ui-corner-all:hover {
+    text-decoration: none;
+    background-color: rgb(203, 171, 171);
+    color: rgb(255, 246, 237);
+    width: 400px;
+    padding: 0;
+    margin: 0;
+}
+.ui-autocomplete {
+    width: 400px;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+}
+.menu-autocomplete {
+    width: 400px;
+}

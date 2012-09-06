@@ -10,5 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= jquery_ui
+ *= autocomplete
  *= require_style
 */
