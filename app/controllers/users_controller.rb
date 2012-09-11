@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       if params[:term]
           @users = User.find(:all, :conditions=>['name LIKE ?', "#{params[:term]}%"])
       else
-          @users = User.search_user(params[:search_user])
+          @users = User.search_user(params[:search_user], params[:page])
       end
       respond_to do |format|
           format.html

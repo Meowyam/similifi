@@ -56,12 +56,11 @@ class User < ActiveRecord::Base
       relationships.find_by_followed_id(other_user.id).destroy
   end
 
-  def self.search_user(search_user)
-      if search_user
-          find(:all, :conditions => ["name LIKE ?", "%#{search_user}%"])
-      else
-          find(:all)
-      end
+  def self.search_user(search_user, page)
+      paginate :per_page => 5,
+          :page => page,
+          :conditions => ["name LIKE ?", "%#{search_user}%"],
+          :order => 'name'
   end
 
   private
