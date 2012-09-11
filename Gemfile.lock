@@ -197,7 +197,7 @@ DEPENDENCIES
   friendly_id
   guard-rspec (= 0.5.5)
   guard-spork (= 0.3.2)
-  jquery-rails
+  jquery-rails (= 2.1.2)
   libnotify (= 0.5.9)
   mail
   nifty-generators

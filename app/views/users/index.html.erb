@@ -4,11 +4,8 @@
 </div>
 
 <h1><%= link_to "All users", :sort => "allusers" %></h1>
-<%= will_paginate %>
 
 <ul class="users">
     <%= render @users %>
 </ul>
-
-<%= will_paginate %>
 

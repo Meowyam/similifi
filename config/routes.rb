@@ -3,7 +3,6 @@ Crocusfields::Application.routes.draw do
       member do
           get :following, :followers
       end
-      get :autocomplete_user_name, :on => :collection
   end
 
   resources :password_resets
