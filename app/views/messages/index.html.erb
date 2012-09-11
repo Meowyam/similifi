@@ -12,7 +12,8 @@
         <span class="timestamp">
             Sent <%= time_ago_in_words(message.created_at) %>ago.
         </span>
-    </p>
+         <%= render 'shared/delete_item', object: message %>   
+   </p>
 <% end %>
 
 

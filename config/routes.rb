@@ -14,7 +14,6 @@ Crocusfields::Application.routes.draw do
   resources :messages do
       get :autocomplete_user_name, :on => :collection
   end
-  resources :privateposts
 
   root to: 'static_pages#home'
 

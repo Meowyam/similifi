@@ -1,0 +1,13 @@
+var availableTags = "/users/autocomplete_user_name";
+$("#user_name").autocomplete({
+    source: function (request, response) {
+        var results = $.ui.autocomplete.filter(availableTags, request.term);
+        if (!results.length) {
+            $("#no-match").text("No such user found!");
+        } else {
+            $("#no-match").empty();
+        }
+
+        response(results);
+    }
+});

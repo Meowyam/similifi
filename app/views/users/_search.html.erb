@@ -1,4 +1,5 @@
 <%= form_tag users_path, :method => 'get' do %>
     <%= autocomplete_field_tag :user_name, params[:user_name], autocomplete_user_name_users_path, :class => "searchbox" %>
-    <%= submit_tag "Search", :name => nil, :class => "searchbox" %>
+    <span id="no-matches"></span>
+    <%= submit_tag "Search", :name => nil, :class => "searchbut" %>
 <% end %>

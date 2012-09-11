@@ -190,6 +190,23 @@ label {
     opacity: 0.9;
 }
 
+.searchbut {
+    width: 200px;
+    opacity: 0.4;
+}
+
+.searchbut:focus{
+    opacity: 0.9;
+}
+
+.searchbut:hover{
+    opacity: 0.9;
+}
+
+.searchbut:active{
+    opacity: 0.9;
+}
+
 .search {
     float: right;
     width: 500px;

@@ -1,12 +1,5 @@
 <% provide(:title, 'Compose') %>
-<h1>Compose</h1>
-<%= form_for @message, :url => {:controller=>"messages", :action => "create"} do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="field">
-        <%= f.autocomplete_field :user_name, autocomplete_user_name_messages_path, class: "menu-autocomplete" %>
-        <%= f.text_area :content, placeholder: "Write." %>
-    </div>
+<section>
+    <%= render 'shared/messages' %>
+</section>
 
-    <%= f.submit "Send", class: "btn btn-large btn-primary" %>
-
-<% end %>
