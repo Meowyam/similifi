@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-    autocomplete :user, :name
     before_filter :correct_user
     
     def index
