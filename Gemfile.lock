@@ -121,8 +121,6 @@ GEM
       activesupport (= 3.2.3)
       bundler (~> 1.0)
       railties (= 3.2.3)
-    rails3-jquery-autocomplete (1.0.9)
-      rails (~> 3.0)
     railties (3.2.3)
       actionpack (= 3.2.3)
       activesupport (= 3.2.3)
@@ -203,7 +201,6 @@ DEPENDENCIES
   nifty-generators
   pg
   rails (= 3.2.3)
-  rails3-jquery-autocomplete
   rb-inotify (= 0.8.8)
   rspec-rails (= 2.9.0)
   rubygems-bundler

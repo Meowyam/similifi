@@ -45,7 +45,7 @@ class UsersController < ApplicationController
       end
       respond_to do |format|
           format.html
-          format.json { render :json => @users.to_json }
+          format.json { render :json => @users }
       end
   end
 
